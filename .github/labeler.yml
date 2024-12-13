@@ -5,6 +5,15 @@ Documentation:
     '**/*.mdx'
   ]
 
+test:
+- changed-files:
+  - any-glob-to-any-file: [
+    '**/*.test.ts',
+    '**/*.test.tsx',
+    '**/*.spec.ts',
+    '**/*.spec.tsx'
+  ]
+
 github actions:
 - changed-files:
   - any-glob-to-any-file: ['.github/**/*']
