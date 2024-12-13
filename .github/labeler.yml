@@ -1,4 +1,4 @@
-Documentation:
+documentation:
 - changed-files:
   - any-glob-to-any-file: [
     '**/*.md',
@@ -13,6 +13,10 @@ test:
     '**/*.spec.ts',
     '**/*.spec.tsx'
   ]
+
+prettier rules 💅:
+- changed-files:
+  - any-glob-to-any-file: ['index.js']
 
 github actions:
 - changed-files:
