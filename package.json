@@ -4,6 +4,11 @@
   "main": "index.js",
   "dependencies": {},
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/torian12321/prettier-config.git"
   }
 }
