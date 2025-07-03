@@ -1,13 +1,13 @@
 # Config Prettier
 
-Shared configuration to use with [Prettier](https://prettier.io/).
+Propylon shared configuration to use with [Prettier](https://prettier.io/).
 
 ## Installation
 
 Add prettier config to your app/package as a dependency by running the command:
 
 ```sh
-npm install @torian12321/prettier-config --save-dev
+npm install @propylon/prettier-config --save-dev
 ```
 
 Recommendation, setup Visual Studio Code to [format on save.](https://www.codementor.io/@myogeshchavan97/how-to-automatically-format-code-in-visual-studio-code-using-prettier-1nebhfbxak#automatically-format-code-on-file-save)
@@ -20,37 +20,35 @@ In your `package.json`:
 {
   "name": "my-library",
   "version": "1.0.0",
-  "prettier": "@torian12321/prettier-config"
+  "prettier": "@propylon/prettier-config"
 }
 ```
 
 If you don't want to use your package.json, alternatively create a `.prettierrc.json` file in your project's root directory.
 
 ```
-"@torian12321/prettier-config"
+"@propylon/prettier-config"
 ```
 
 ## Properties
 
-<!-- prettier-ignore-start -->
-> [arrowParens](https://prettier.io/docs/en/options.html#arrow-function-parentheses): 'avoid'
+### Line length and wrapping
 
-```js
-/** ❌ bad */
-const myFunction = (userName) => {
-  return `Hello ${userName}`;
-};
-```
+> [printWidth](https://prettier.io/docs/options.html#print-width): 80
 
-```js
-/** ✅ good */
-const myFunction = userName => {
-  return `Hello ${userName}`;
-};
-```
+> [proseWrap](https://prettier.io/docs/options.html#prose-wrap): 'preserve'
+
+### Indentation
+
+> [tabWidth](https://prettier.io/docs/options.html#tab-width): 2
+
+> [useTabs](https://prettier.io/docs/options.html#tabs): false
+
+### Quotes
 
 > [singleQuote](https://prettier.io/docs/en/options.html#quotes): true
 
+<!-- prettier-ignore-start -->
 ```js
 /** ❌ bad */
 import someCode from "customLibrary";
@@ -59,7 +57,9 @@ const sayHy = () => {
   return "Hello User";
 };
 ```
+<!-- prettier-ignore-end -->
 
+<!-- prettier-ignore-start -->
 ```js
 /** ✅ good */
 import someCode from 'customLibrary';
@@ -68,44 +68,114 @@ const sayHy = () => {
   return 'Hello User';
 };
 ```
+<!-- prettier-ignore-end -->
+
+> [quoteProps](https://prettier.io/docs/options.html#quote-props): 'as-needed'
+
+<!-- prettier-ignore-start -->
+```js
+const obj = {
+  normal: 'value',
+  'needs-quotes': 'value',  // Quoted because of hyphen
+  '123': 'value'            // Quoted because it's a number
+};
+```
+<!-- prettier-ignore-end -->
+
+### Spacing
+
+> [bracketSpacing](https://prettier.io/docs/en/options.html#bracket-spacing): true
+
+<!-- prettier-ignore-start -->
+```js
+/** ❌ bad */
+obj = {foo: bar}
+
+/** ✅ good */
+obj = { foo: bar }
+```
+<!-- prettier-ignore-end -->
+
+> [bracketSameLine](https://prettier.io/docs/options.html#bracket-line): false
+
+<!-- prettier-ignore-start -->
+```js
+/** ❌ bad */
+<button
+  className="prettier-class"
+  id="prettier-id"
+  onClick={this.handleClick}>
+  Click Here
+</button>
+
+/** ✅ good */
+<button
+  className="prettier-class"
+  id="prettier-id"
+  onClick={this.handleClick}
+>
+  Click Here
+</button>
+```
+<!-- prettier-ignore-end -->
+
+### Commas and semicolons
 
 > [trailingComma](https://prettier.io/docs/en/options.html#trailing-commas): 'all'
 
+<!-- prettier-ignore-start -->
 ```js
 /** ❌ bad */
 obj = {
   hello: 'hello',
   world: 'world'
 }
-```
 
-```js
 /** ✅ good */
 obj = {
   hello: 'hello',
   world: 'world', // <-- trailing comma on last element
 }
 ```
+<!-- prettier-ignore-end -->
 
-> [bracketSpacing](https://prettier.io/docs/en/options.html#bracket-spacing): true
+> [semi](https://prettier.io/docs/options.html#semicolons): 'preserve'
 
+<!-- prettier-ignore-start -->
+```js
+/** ❌ Before prettier */
+const name = 'John'
+console.log(name)
+
+/** ✅ After prettier */
+const name = 'John';
+console.log(name);
+```
+<!-- prettier-ignore-end -->
+
+### Arrow functions
+
+> [arrowParens](https://prettier.io/docs/en/options.html#arrow-function-parentheses): 'avoid'
+
+<!-- prettier-ignore-start -->
 ```js
 /** ❌ bad */
-obj = {foo: bar}
-```
+const myFunction = (userName) => {
+  return `Hello ${userName}`;
+};
 
-```js
 /** ✅ good */
-obj = { foo: bar }
+const myFunction = userName => {
+  return `Hello ${userName}`;
+};
 ```
 <!-- prettier-ignore-end -->
 
 ## JSX Properties
 
-<!-- prettier-ignore-start -->
-
 > [jsxSingleQuote](https://prettier.io/docs/en/options.html#jsx-quotes): true
 
+<!-- prettier-ignore-start -->
 ```jsx
 /** ❌ bad */
 import React from "react";
@@ -119,7 +189,9 @@ const Button = () => {
   );
 };
 ```
+<!-- prettier-ignore-end -->
 
+<!-- prettier-ignore-start -->
 ```jsx
 /** ✅ good */
 import React from 'react';
@@ -133,5 +205,12 @@ const Button = () => {
   );
 };
 ```
-
 <!-- prettier-ignore-end -->
+
+> [jsxBracketSameLine](https://prettier.io/docs/options.html#deprecated-jsx-brackets): false
+
+> [singleAttributePerLine](https://prettier.io/docs/options.html#single-attribute-per-line): false
+
+## Line endings
+
+> [endOfLine](https://prettier.io/docs/options.html#end-of-line): 'lf'

@@ -3,9 +3,10 @@
   "version": "0.0.0",
   "description": "Prettier config",
   "main": "src/index.js",
+  "type": "module",
   "scripts": {
-    "prepublish": "npmrc-replace-env",
-    "publish": "npm publish"
+    "preinstall": "node scripts/generate-npmrc.js",
+    "format": "prettier --write ."
   },
   "publishConfig": {
     "access": "public",
@@ -16,6 +17,6 @@
     "url": "git+https://github.com/torian12321/prettier-config.git"
   },
   "devDependencies": {
-    "npmrc-replace-env": "^1.1.4"
+    "prettier": "^3.6.2"
   }
 }
