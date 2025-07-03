@@ -214,5 +214,3 @@ const Button = () => {
 ## Line endings
 
 > [endOfLine](https://prettier.io/docs/options.html#end-of-line): 'lf'
-
-test
