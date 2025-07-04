@@ -7,8 +7,8 @@ To the root of your project, add `.npmrc` file with the given content:
 ```sh
 # .npmrc
 #
-# Custom registry for @propylon packages.
-@propylon:registry=https://npm.pkg.github.com
+# Custom registry for @torian12321 packages.
+@torian12321:registry=https://npm.pkg.github.com
 ```
 
 ## Installation
@@ -16,7 +16,7 @@ To the root of your project, add `.npmrc` file with the given content:
 Add prettier config to your app/package as a dependency by running the command:
 
 ```sh
-npm install @propylon/prettier-config --save-dev
+npm install @torian12321/prettier-config --save-dev
 ```
 
 ## Usage
@@ -28,14 +28,14 @@ In your `package.json`:
 {
   "name": "my-library",
   "version": "1.0.0",
-  "prettier": "@propylon/prettier-config"
+  "prettier": "@torian12321/prettier-config"
 }
 ```
 
 If you don't want to use your package.json, alternatively create a `.prettierrc.json` file in your project's root directory.
 
 ```
-"@propylon/prettier-config"
+"@torian12321/prettier-config"
 ```
 
 ## Recommendation

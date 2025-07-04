@@ -1,6 +1,6 @@
 # Config Prettier
 
-Propylon shared configuration to use with [Prettier](https://prettier.io/).
+Shared configuration to use with [Prettier](https://prettier.io/).
 
 ## Usage
 
