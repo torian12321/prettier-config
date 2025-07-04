@@ -2,33 +2,9 @@
 
 Propylon shared configuration to use with [Prettier](https://prettier.io/).
 
-## Installation
-
-Add prettier config to your app/package as a dependency by running the command:
-
-```sh
-npm install @propylon/prettier-config --save-dev
-```
-
-Recommendation, setup Visual Studio Code to [format on save.](https://www.codementor.io/@myogeshchavan97/how-to-automatically-format-code-in-visual-studio-code-using-prettier-1nebhfbxak#automatically-format-code-on-file-save)
-
 ## Usage
 
-In your `package.json`:
-
-```json
-{
-  "name": "my-library",
-  "version": "1.0.0",
-  "prettier": "@propylon/prettier-config"
-}
-```
-
-If you don't want to use your package.json, alternatively create a `.prettierrc.json` file in your project's root directory.
-
-```
-"@propylon/prettier-config"
-```
+To use Prettier rules in your project, follow [usage Examples](./README.md)
 
 ## Properties
 
