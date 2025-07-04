@@ -4,7 +4,7 @@ Propylon shared configuration to use with [Prettier](https://prettier.io/).
 
 ## Usage
 
-To use Prettier rules in your project, follow [usage Examples](./README.md)
+To use Prettier rules in your project, follow [usage Examples](./doc/README.md)
 
 ## Properties
 
