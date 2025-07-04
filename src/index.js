@@ -24,7 +24,6 @@ export default {
 
   // JSX
   jsxSingleQuote: true,
-  jsxBracketSameLine: false,
   singleAttributePerLine: false,
 
   // Line endings

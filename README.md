@@ -207,8 +207,6 @@ const Button = () => {
 ```
 <!-- prettier-ignore-end -->
 
-> [jsxBracketSameLine](https://prettier.io/docs/options.html#deprecated-jsx-brackets): false
-
 > [singleAttributePerLine](https://prettier.io/docs/options.html#single-attribute-per-line): false
 
 ## Line endings
