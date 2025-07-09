@@ -16,7 +16,7 @@ To the root of your project, add `.npmrc` file with the given content:
 Add prettier config to your app/package as a dependency by running the command:
 
 ```sh
-npm install @torian12321/prettier-config --save-dev
+npm install prettier @torian12321/prettier-config --save-dev
 ```
 
 ## Usage
