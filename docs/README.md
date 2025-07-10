@@ -21,7 +21,6 @@ npm install prettier @torian12321/prettier-config --save-dev
 
 ## Usage
 
-
 In your `package.json`:
 
 ```json
