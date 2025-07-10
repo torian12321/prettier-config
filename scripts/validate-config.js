@@ -5,20 +5,44 @@ import prettier from 'prettier';
 
 // Define valid prettier options and their expected types
 const validOptions = {
-  printWidth: { type: 'number', valid: (val) => typeof val === 'number' && val > 0 },
-  tabWidth: { type: 'number', valid: (val) => typeof val === 'number' && val > 0 },
-  useTabs: { type: 'boolean', valid: (val) => typeof val === 'boolean' },
-  semi: { type: 'boolean', valid: (val) => typeof val === 'boolean' },
-  singleQuote: { type: 'boolean', valid: (val) => typeof val === 'boolean' },
-  quoteProps: { type: 'string', valid: (val) => ['as-needed', 'consistent', 'preserve'].includes(val) },
-  jsxSingleQuote: { type: 'boolean', valid: (val) => typeof val === 'boolean' },
-  trailingComma: { type: 'string', valid: (val) => ['none', 'es5', 'all'].includes(val) },
-  bracketSpacing: { type: 'boolean', valid: (val) => typeof val === 'boolean' },
-  bracketSameLine: { type: 'boolean', valid: (val) => typeof val === 'boolean' },
-  arrowParens: { type: 'string', valid: (val) => ['avoid', 'always'].includes(val) },
-  proseWrap: { type: 'string', valid: (val) => ['always', 'never', 'preserve'].includes(val) },
-  singleAttributePerLine: { type: 'boolean', valid: (val) => typeof val === 'boolean' },
-  endOfLine: { type: 'string', valid: (val) => ['lf', 'crlf', 'cr', 'auto'].includes(val) }
+  printWidth: {
+    type: 'number',
+    valid: val => typeof val === 'number' && val > 0,
+  },
+  tabWidth: {
+    type: 'number',
+    valid: val => typeof val === 'number' && val > 0,
+  },
+  useTabs: { type: 'boolean', valid: val => typeof val === 'boolean' },
+  semi: { type: 'boolean', valid: val => typeof val === 'boolean' },
+  singleQuote: { type: 'boolean', valid: val => typeof val === 'boolean' },
+  quoteProps: {
+    type: 'string',
+    valid: val => ['as-needed', 'consistent', 'preserve'].includes(val),
+  },
+  jsxSingleQuote: { type: 'boolean', valid: val => typeof val === 'boolean' },
+  trailingComma: {
+    type: 'string',
+    valid: val => ['none', 'es5', 'all'].includes(val),
+  },
+  bracketSpacing: { type: 'boolean', valid: val => typeof val === 'boolean' },
+  bracketSameLine: { type: 'boolean', valid: val => typeof val === 'boolean' },
+  arrowParens: {
+    type: 'string',
+    valid: val => ['avoid', 'always'].includes(val),
+  },
+  proseWrap: {
+    type: 'string',
+    valid: val => ['always', 'never', 'preserve'].includes(val),
+  },
+  singleAttributePerLine: {
+    type: 'boolean',
+    valid: val => typeof val === 'boolean',
+  },
+  endOfLine: {
+    type: 'string',
+    valid: val => ['lf', 'crlf', 'cr', 'auto'].includes(val),
+  },
 };
 
 console.log('🔍 Validating prettier configuration properties...\n');
@@ -32,14 +56,16 @@ Object.entries(config).forEach(([key, value]) => {
     hasErrors = true;
     return;
   }
-  
+
   const option = validOptions[key];
   if (!option.valid(value)) {
-    console.error(`❌ Invalid value for ${key}: ${value} (expected ${option.type})`);
+    console.error(
+      `❌ Invalid value for ${key}: ${value} (expected ${option.type})`,
+    );
     hasErrors = true;
     return;
   }
-  
+
   console.log(`✅ ${key}: ${value}`);
 });
 
@@ -60,7 +86,11 @@ try {
 const testCases = [
   { content: 'const x={a:1,b:2};', parser: 'babel', name: 'JavaScript' },
   { content: '<div><span>test</span></div>', parser: 'html', name: 'HTML' },
-  { content: 'const x = { a: 1, b: 2 };', parser: 'babel', name: 'JavaScript with spaces' }
+  {
+    content: 'const x = { a: 1, b: 2 };',
+    parser: 'babel',
+    name: 'JavaScript with spaces',
+  },
 ];
 
 console.log('\n🧪 Testing with different parsers...');
@@ -79,7 +109,7 @@ testCases.forEach(({ content, parser, name }) => {
 const edgeCases = [
   'const x={a:1,b:2,c:3,d:4,e:5,f:6,g:7,h:8,i:9,j:10,k:11,l:12,m:13,n:14,o:15,p:16,q:17,r:18,s:19,t:20,u:21,v:22,w:23,x:24,y:25,z:26};',
   '<div><span>test</span><span>test2</span><span>test3</span></div>',
-  'const fn=(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z)=>a+b+c+d+e+f+g+h+i+j+k+l+m+n+o+p+q+r+s+t+u+v+w+x+y+z;'
+  'const fn=(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z)=>a+b+c+d+e+f+g+h+i+j+k+l+m+n+o+p+q+r+s+t+u+v+w+x+y+z;',
 ];
 
 console.log('\n🧪 Testing edge cases...');
@@ -101,4 +131,4 @@ if (hasErrors) {
   process.exit(1);
 }
 
-console.log('\n🎉 All prettier configuration properties are valid!'); 
+console.log('\n🎉 All prettier configuration properties are valid!');
