@@ -11,7 +11,7 @@ Shared configuration to use with [Prettier](https://prettier.io/).
 
 ## Usage
 
-To use Prettier rules in your project, follow [usage Examples](./docs/README.md)
+To use Prettier rules in your project, follow [usage Examples](./docs/USAGE.md)
 
 ## Properties
 
