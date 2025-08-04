@@ -3,7 +3,7 @@ name: Create Release from package.json
 on:
   push:
     branches:
-      - main
+      - master
     paths:
       - 'package.json'
 
