@@ -3,6 +3,7 @@
   "version": "0.0.2",
   "description": "Prettier config",
   "main": "src/index.js",
+  "types": "src/index.d.ts",
   "type": "module",
   "scripts": {
     "validate": "node scripts/validate-config.js",
