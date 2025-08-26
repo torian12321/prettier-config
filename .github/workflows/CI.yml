@@ -25,7 +25,7 @@ jobs:
         run: npm ci
 
       - name: 🧪 Run configuration validation
-        run: npm run validate
+        run: npm run test
 
       - name: 📝 Check formatting
         run: npm run format:check

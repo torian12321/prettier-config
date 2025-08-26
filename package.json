@@ -13,11 +13,10 @@
     }
   },
   "scripts": {
-    "validate": "node scripts/validate-config.js",
+    "test": "node scripts/validate-config.js",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "test": "npm run validate",
-    "prepublishOnly": "npm run validate && npm run format:check"
+    "prepublishOnly": "npm run test && npm run format:check"
   },
   "publishConfig": {
     "access": "public",
