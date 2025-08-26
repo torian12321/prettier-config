@@ -1,15 +1,23 @@
 {
+  "version": "0.0.4-alpha.1",
   "name": "@torian12321/prettier-config",
-  "version": "0.0.3",
   "description": "Prettier config",
-  "main": "src/index.js",
-  "types": "src/index.d.ts",
+  "author": "torian12321",
+  "main": "index.js",
+  "types": "index.d.ts",
   "type": "module",
+  "exports": {
+    ".": {
+      "import": "./src/index.js",
+      "types": "./src/index.d.ts"
+    }
+  },
   "scripts": {
     "validate": "node scripts/validate-config.js",
-    "prepublishOnly": "npm run validate",
     "format": "prettier --write .",
-    "test": "npm run validate"
+    "format:check": "prettier --check .",
+    "test": "npm run validate",
+    "prepublishOnly": "npm run validate && npm run format:check"
   },
   "publishConfig": {
     "access": "public",
