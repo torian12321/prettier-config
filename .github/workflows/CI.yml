@@ -1,4 +1,5 @@
 name: CI
+description: 'CI workflow for the project. Check formatting and validate config file.'
 
 on:
   push:
@@ -25,3 +26,6 @@ jobs:
 
       - name: 🧪 Run configuration validation
         run: npm run validate
+
+      - name: 📝 Check formatting
+        run: npm run format:check
