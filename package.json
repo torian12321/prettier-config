@@ -16,7 +16,8 @@
     "test": "node scripts/validate-config.js",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "prepublishOnly": "npm run test && npm run format:check"
+    "prepublishOnly": "npm run test && npm run format:check",
+    "prepare": "husky"
   },
   "publishConfig": {
     "access": "public",
@@ -27,6 +28,7 @@
     "url": "git+https://github.com/torian12321/prettier-config.git"
   },
   "devDependencies": {
+    "husky": "^9.1.7",
     "prettier": "^3.6.2"
   }
 }
