@@ -29,6 +29,3 @@ export default {
   // Line endings - Windows-style newlines
   endOfLine: 'crlf',
 };
-
-
-
