@@ -26,6 +26,6 @@ export default {
   jsxSingleQuote: true,
   singleAttributePerLine: false,
 
-  // Line endings
-  endOfLine: 'lf',
+  // Line endings - Windows-style newlines
+  endOfLine: 'crlf',
 };
